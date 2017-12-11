@@ -1,0 +1,15 @@
+[Unit]
+Description=Plexpy Server
+Wants=network-online.target
+After=syslog.target network.target nss-lookup.target network-online.target
+
+[Service]
+WorkingDirectory=<%= @deploy_dir %>
+ExecStart=<%= @venv_python %> <%= @deploy_dir %>/plexpy/PlexPy.py --daemon --port <%= @plexpy_port %>
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s INT $MAINPID
+User=<%= @deploy_user %>
+Group=<%= @deploy_user %>
+
+[Install]
+WantedBy=multi-user.target
