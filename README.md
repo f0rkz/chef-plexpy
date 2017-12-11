@@ -1,4 +1,6 @@
-# plexpy
+# PlexPy Chef Cookbook
 
-TODO: Enter the cookbook description here.
+This cookbook will install plexpy for your plex server monitoring needs.
 
+## Usage
+Include `plexpy` in your node's run list.
