@@ -22,10 +22,6 @@ package 'git' do
   action :install
 end
 
-package 'python2' do
-  action :install
-end
-
 package 'virtualenv' do
   action :install
 end
